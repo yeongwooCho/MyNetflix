@@ -129,6 +129,9 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="playButtonTapped:" destination="pWR-J1-KYf" eventType="touchUpInside" id="kmc-R1-mv1"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -156,7 +159,7 @@
                                                     <constraint firstAttribute="height" constant="200" id="pAo-qA-xoA"/>
                                                 </constraints>
                                                 <connections>
-                                                    <segue destination="vjs-af-Ox2" kind="embed" id="h5W-LE-Ckn"/>
+                                                    <segue destination="vjs-af-Ox2" kind="embed" identifier="award" id="h5W-LE-Ckn"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T2v-Ie-JaK">
@@ -165,7 +168,7 @@
                                                     <constraint firstAttribute="height" constant="200" id="wgf-xr-d8Z"/>
                                                 </constraints>
                                                 <connections>
-                                                    <segue destination="YSi-a2-Kq3" kind="embed" id="BeD-p8-BMX"/>
+                                                    <segue destination="YSi-a2-Kq3" kind="embed" identifier="hot" id="BeD-p8-BMX"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28V-Ij-sMB">
@@ -174,7 +177,7 @@
                                                     <constraint firstAttribute="height" constant="200" id="1ny-Mf-0P2"/>
                                                 </constraints>
                                                 <connections>
-                                                    <segue destination="RbF-HD-9nT" kind="embed" id="WIF-c8-Ebe"/>
+                                                    <segue destination="RbF-HD-9nT" kind="embed" identifier="my" id="WIF-c8-Ebe"/>
                                                 </connections>
                                             </containerView>
                                         </subviews>
@@ -256,7 +259,7 @@
                                     <inset key="sectionInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="rRz-fL-qey">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecommandCell" id="rRz-fL-qey" customClass="RecommandCell" customModule="MyNetflix" customModuleProvider="target">
                                         <rect key="frame" x="8" y="0.0" width="120" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ML4-pb-bAh">
@@ -274,6 +277,9 @@
                                                 <constraint firstItem="XQQ-EV-QvU" firstAttribute="top" secondItem="ML4-pb-bAh" secondAttribute="top" id="rxd-o0-7ym"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="thumbnailImage" destination="XQQ-EV-QvU" id="JpX-Rh-isn"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -282,6 +288,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="x8H-6c-VkM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="j8N-6K-cfS" firstAttribute="leading" secondItem="kk4-qD-v94" secondAttribute="leading" id="DoW-3w-X8P"/>
@@ -291,6 +298,9 @@
                             <constraint firstAttribute="trailing" secondItem="j8N-6K-cfS" secondAttribute="trailing" id="zxn-Ie-Hht"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sectionLabel" destination="rlT-DF-fa6" id="pNw-bu-LgB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JD4-k3-piy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -323,7 +333,7 @@
                                     <inset key="sectionInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lCd-iN-ViJ">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecommandCell" id="lCd-iN-ViJ" customClass="RecommandCell" customModule="MyNetflix" customModuleProvider="target">
                                         <rect key="frame" x="8" y="0.0" width="120" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0PA-we-sex">
@@ -341,6 +351,9 @@
                                                 <constraint firstItem="BMA-Bg-WsL" firstAttribute="top" secondItem="0PA-we-sex" secondAttribute="top" id="vms-Sn-9o2"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="thumbnailImage" destination="BMA-Bg-WsL" id="lZo-GZ-jBz"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -349,6 +362,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="jfp-RO-TXw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="kIb-Ia-W6r" secondAttribute="trailing" id="9xI-QC-Pgh"/>
@@ -358,6 +372,9 @@
                             <constraint firstAttribute="bottom" secondItem="kIb-Ia-W6r" secondAttribute="bottom" constant="10" id="niX-jm-dqr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sectionLabel" destination="buj-gw-ZP7" id="mh9-jC-qgF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XXW-oR-kyB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -390,7 +407,7 @@
                                     <inset key="sectionInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ybh-Ot-ui6">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecommandCell" id="ybh-Ot-ui6" customClass="RecommandCell" customModule="MyNetflix" customModuleProvider="target">
                                         <rect key="frame" x="8" y="0.0" width="120" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sHI-s0-3E3">
@@ -408,6 +425,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="JdW-fZ-ca5" secondAttribute="trailing" id="p3R-hG-8nY"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="thumbnailImage" destination="JdW-fZ-ca5" id="xE0-Tg-TDM"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -416,6 +436,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Yao-OW-GbT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="k9K-VX-KMR" firstAttribute="top" secondItem="WM5-YZ-hEU" secondAttribute="top" constant="6" id="4nW-lv-JhC"/>
@@ -425,6 +446,9 @@
                             <constraint firstItem="k9K-VX-KMR" firstAttribute="leading" secondItem="WM5-YZ-hEU" secondAttribute="leading" constant="8" id="SJy-44-Jkz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sectionLabel" destination="k9K-VX-KMR" id="lgJ-bf-5wd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bbw-Wc-mMF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
