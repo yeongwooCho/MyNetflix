@@ -83,7 +83,7 @@ class RecommandViewModel {
     }
     
     func fetchItems() {
-        
+        self.items = MovieFetcher.fetch(type)
     }
 }
 
@@ -95,6 +95,27 @@ class RecommandCell: UICollectionViewCell {
     }
 }
 
+class MovieFetcher {
+    static func fetch(_ type: RecommandViewModel.RecommandingType) -> [DummyItem] {
+        switch type {
+        case .award:
+            let movies = (1..<10).map { (num) in
+                DummyItem(thumbnail: UIImage(named: "img_movie_\(num)")!)
+            }
+            return movies
+        case .hot:
+            let movies = (10..<19).map { num in
+                DummyItem(thumbnail: UIImage(named: "img_movie_\(num)")!)
+            }
+            return movies
+        case .my:
+            let movies = (1..<10).map { $0 * 2 }.map { num in
+                DummyItem(thumbnail: UIImage(named: "img_movie_\(num)")!)
+            }
+            return movies
+        }
+    }
+}
 
 struct DummyItem {
     let thumbnail: UIImage
