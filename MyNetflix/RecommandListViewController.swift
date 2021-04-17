@@ -10,7 +10,7 @@ import UIKit
 class RecommandListViewController: UIViewController {
 
     @IBOutlet weak var sectionLabel: UILabel!
-
+    let viewModel = RecommandViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +22,13 @@ class RecommandListViewController: UIViewController {
     }
     
     func updateUI() {
-        
+        sectionLabel.text = viewModel.type.title
     }
 }
 
 extension RecommandListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return viewModel.numOfItems
-        return 0
+        return viewModel.numOfItems
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -37,8 +36,8 @@ extension RecommandListViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-//        let movie = viewModel.items(at: indexPath.item)
-//        cell.updateUI(movie: movie)
+        let movie = viewModel.items(at: indexPath.item)
+        cell.updateUI(movie: movie)
         return cell
     }
 }
@@ -53,6 +52,41 @@ extension RecommandListViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+class RecommandViewModel {
+    enum RecommandingType {
+        case award
+        case hot
+        case my
+        
+        var title: String {
+            switch self {
+            case .award: return "아카데미 호황 영화"
+            case .hot: return "취향저격 Hot 컨텐츠"
+            case .my: return "내가 찜한 컨텐츠"
+            }
+        }
+    }
+    
+    private (set) var type: RecommandingType = .my
+    private var items: [DummyItem] = []
+    
+    var numOfItems: Int {
+        return items.count
+    }
+    
+    func items(at index: Int) -> DummyItem {
+        return items[index]
+    }
+    
+    func updateType(_ type: RecommandingType) {
+        self.type = type
+    }
+    
+    func fetchItems() {
+        
+    }
+}
+
 class RecommandCell: UICollectionViewCell {
     @IBOutlet weak var thumbnailImage: UIImageView!
     
@@ -60,6 +94,7 @@ class RecommandCell: UICollectionViewCell {
         thumbnailImage.image = movie.thumbnail
     }
 }
+
 
 struct DummyItem {
     let thumbnail: UIImage
