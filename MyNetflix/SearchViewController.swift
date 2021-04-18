@@ -22,3 +22,26 @@ class SearchViewController: UIViewController {
     }
     
 }
+
+extension SearchViewController: UISearchBarDelegate {
+    private func dismissKeyboard() {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // TODO
+        // 키보드가 올라와 있을때 내려가도록 처리
+        dismissKeyboard()
+        
+        // 검색어가 있는지 확인
+        guard let searchTerm = searchBar.text, searchTerm.isEmpty == false else { return }
+        
+        // 네트워킹을 통한 검색
+        // - 목표: searchTerm을 갖고 네트워킹을 통해서 영화 검색
+        // - 검색 API 필요
+        // - 결과를 받아올 모델 Movie, Response
+        // - 결과를 받아와서 CollectionView로 표현해주자
+        
+        print("---> 검색결과: \(searchTerm)")
+    }
+}
