@@ -9,6 +9,16 @@ import UIKit
 
 class AppTabbarController: UITabBarController {
 
+    // portrait 세로, landscape 가로
+    
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
