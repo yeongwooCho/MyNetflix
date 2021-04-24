@@ -64,8 +64,7 @@ class SearchAPI {
         
         let dataTask = session.dataTask(with: requestURL) { (data, response, error) in
             let successRange = 200..<300
-            // error가 없다. response의 상태코드가 존재한다. 상태코드는 200대 이다.
-            // 다음 조건이 만족해야한다.
+            // error가 없다. response의 상태코드가 존재한다. 상태코드는 200대 이다. 다음 조건이 만족해야한다.
             guard error == nil,
                   let statusCode = (response as? HTTPURLResponse)?.statusCode,
                   successRange.contains(statusCode) else {
@@ -80,19 +79,33 @@ class SearchAPI {
             // data -> [Movie]
             // 이를 위해서는 data의 parsing이 필요하고 어랴애 존재하는 Response와 Movie가 protocol
 //            completion([Movie])
-            
             let string = String(data: resultData, encoding: .utf8)
             print("---> result: \(string)")
         }
         dataTask.resume()
-        
     }
 }
 
-struct Response {
-    
+struct Response: Codable {
+    let resultCount: Int
+    let movies: [Movie]
+
+    enum CodingKeys: String, CodingKey {
+        case resultCount
+        case movies = "results"
+    }
 }
 
-struct Movie {
+struct Movie: Codable {
+    let title: String
+    let director: String
+    let thumbnailPath: String
+    let previewURL: String
     
+    enum CodingKeys: String, CodingKey {
+        case title = "trackName"
+        case director = "artistName"
+        case thumbnailPath = "artworkUrl100"
+        case previewURL = "previewUrl"
+    }
 }
