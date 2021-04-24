@@ -76,13 +76,24 @@ class SearchAPI {
                 return
             }
             
-            // data -> [Movie]
-            // 이를 위해서는 data의 parsing이 필요하고 어랴애 존재하는 Response와 Movie가 protocol
-//            completion([Movie])
-            let string = String(data: resultData, encoding: .utf8)
-            print("---> result: \(string)")
+            // data -> [Movie] 이를 위해서는 data의 parsing이 필요하고 어랴애 존재하는 Response와 Movie가 protocol
+            let movies = SearchAPI.parseMovies(resultData)
+            completion(movies)
+            print("---> 겸색결과: \(movies.count)") // 가볍게 갯수나 세아려 보자
         }
         dataTask.resume()
+    }
+    
+    static func parseMovies(_ data: Data) -> [Movie] {
+        let decoder = JSONDecoder()
+        
+        do {
+            let response = try decoder.decode(Response.self, from: data) // parsing이 안될 수 있다.
+            return response.movies
+        } catch let error {
+            print(error.localizedDescription)
+            return []
+        }
     }
 }
 
