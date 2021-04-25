@@ -38,13 +38,16 @@ extension SearchViewController: UISearchBarDelegate {
         
         // 네트워킹을 통한 검색
         // - 목표: searchTerm을 갖고 네트워킹을 통해서 영화 검색
-        // - 검색 API 필요
-        // - 결과를 받아올 모델 Movie, Response
+        // - [x] 검색 API 필요
+        // - [x] 결과를 받아올 모델 Movie, Response
         // - 결과를 받아와서 CollectionView로 표현해주자
         SearchAPI.search(searchTerm) { (movies) in
             // collectionView 로 표현하기
+            DispatchQueue.main.async {
+                self.movies = movies
+                self.resultCollectionView.reloadData()
+            }
         }
-        
         print("---> 검색결과: \(searchTerm)")
     }
 }
@@ -79,7 +82,6 @@ class SearchAPI {
             // data -> [Movie] 이를 위해서는 data의 parsing이 필요하고 어랴애 존재하는 Response와 Movie가 protocol
             let movies = SearchAPI.parseMovies(resultData)
             completion(movies)
-            print("---> 겸색결과: \(movies.count)") // 가볍게 갯수나 세아려 보자
         }
         dataTask.resume()
     }
