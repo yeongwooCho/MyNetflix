@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 
 class SearchViewController: UIViewController {
 
@@ -42,7 +42,11 @@ extension SearchViewController: UICollectionViewDelegate {
 
 extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 0, height: 0)
+        let itemSpacing: CGFloat = 10
+        let margin: CGFloat = 8
+        let width: CGFloat = (view.bounds.width - itemSpacing*2 - margin*2) / 3
+        let height: CGFloat = width * 10 / 7
+        return CGSize(width: width, height: height)
     }
 }
 
