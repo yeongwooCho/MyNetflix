@@ -54,7 +54,8 @@ class ResultCell: UICollectionViewCell {
     @IBOutlet weak var movieThumbnail: UIImageView!
     
     func updateUI(at indexMovie: Movie) {
-        
+        let url = URL(string: indexMovie.thumbnailPath)!
+        self.movieThumbnail.kf.setImage(with: url)
     }
 }
 
