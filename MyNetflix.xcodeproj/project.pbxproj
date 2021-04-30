@@ -17,6 +17,8 @@
 		3D1A8D2E26286F8C00691570 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1A8D2D26286F8C00691570 /* SearchViewController.swift */; };
 		3D1A8D362628A26D00691570 /* RecommandListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1A8D352628A26D00691570 /* RecommandListViewController.swift */; };
 		3D9A307B2634407F0087567D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9A307A2634407F0087567D /* Kingfisher */; };
+		3DD3CFA9263A857A00C8C639 /* Player.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD3CFA8263A857A00C8C639 /* Player.storyboard */; };
+		3DD3CFAB263A85A000C8C639 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD3CFAA263A85A000C8C639 /* PlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		3D1A8D2A26286F7B00691570 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Assets.xcassets/HomeViewController.swift; sourceTree = "<group>"; };
 		3D1A8D2D26286F8C00691570 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3D1A8D352628A26D00691570 /* RecommandListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandListViewController.swift; sourceTree = "<group>"; };
+		3DD3CFA8263A857A00C8C639 /* Player.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Player.storyboard; sourceTree = "<group>"; };
+		3DD3CFAA263A85A000C8C639 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 				3D1A8D2A26286F7B00691570 /* HomeViewController.swift */,
 				3D1A8D2D26286F8C00691570 /* SearchViewController.swift */,
 				3D1A8D352628A26D00691570 /* RecommandListViewController.swift */,
+				3DD3CFA8263A857A00C8C639 /* Player.storyboard */,
+				3DD3CFAA263A85A000C8C639 /* PlayerViewController.swift */,
 			);
 			path = MyNetflix;
 			sourceTree = "<group>";
@@ -142,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D1A8D1F26285CD500691570 /* LaunchScreen.storyboard in Resources */,
+				3DD3CFA9263A857A00C8C639 /* Player.storyboard in Resources */,
 				3D1A8D1C26285CD500691570 /* Assets.xcassets in Resources */,
 				3D1A8D1A26285CD400691570 /* Main.storyboard in Resources */,
 			);
@@ -157,6 +164,7 @@
 				3D1A8D2E26286F8C00691570 /* SearchViewController.swift in Sources */,
 				3D1A8D2B26286F7B00691570 /* HomeViewController.swift in Sources */,
 				3D1A8D2826286A2600691570 /* AppTabbarController.swift in Sources */,
+				3DD3CFAB263A85A000C8C639 /* PlayerViewController.swift in Sources */,
 				3D1A8D362628A26D00691570 /* RecommandListViewController.swift in Sources */,
 				3D1A8D1326285CD400691570 /* AppDelegate.swift in Sources */,
 				3D1A8D1526285CD400691570 /* SceneDelegate.swift in Sources */,
