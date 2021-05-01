@@ -19,6 +19,7 @@
 		3D9A307B2634407F0087567D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9A307A2634407F0087567D /* Kingfisher */; };
 		3DD3CFA9263A857A00C8C639 /* Player.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD3CFA8263A857A00C8C639 /* Player.storyboard */; };
 		3DD3CFAB263A85A000C8C639 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD3CFAA263A85A000C8C639 /* PlayerViewController.swift */; };
+		3DD3CFAD263BA6AA00C8C639 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD3CFAC263BA6AA00C8C639 /* PlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		3D1A8D352628A26D00691570 /* RecommandListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandListViewController.swift; sourceTree = "<group>"; };
 		3DD3CFA8263A857A00C8C639 /* Player.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Player.storyboard; sourceTree = "<group>"; };
 		3DD3CFAA263A85A000C8C639 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		3DD3CFAC263BA6AA00C8C639 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				3D1A8D352628A26D00691570 /* RecommandListViewController.swift */,
 				3DD3CFA8263A857A00C8C639 /* Player.storyboard */,
 				3DD3CFAA263A85A000C8C639 /* PlayerViewController.swift */,
+				3DD3CFAC263BA6AA00C8C639 /* PlayerView.swift */,
 			);
 			path = MyNetflix;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				3D1A8D2E26286F8C00691570 /* SearchViewController.swift in Sources */,
 				3D1A8D2B26286F7B00691570 /* HomeViewController.swift in Sources */,
 				3D1A8D2826286A2600691570 /* AppTabbarController.swift in Sources */,
+				3DD3CFAD263BA6AA00C8C639 /* PlayerView.swift in Sources */,
 				3DD3CFAB263A85A000C8C639 /* PlayerViewController.swift in Sources */,
 				3D1A8D362628A26D00691570 /* RecommandListViewController.swift in Sources */,
 				3D1A8D1326285CD400691570 /* AppDelegate.swift in Sources */,
