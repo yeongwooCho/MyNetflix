@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D116642264A824F0019FAA0 /* UpComingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D116641264A824F0019FAA0 /* UpComingViewController.swift */; };
 		3D1A8D1326285CD400691570 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1A8D1226285CD400691570 /* AppDelegate.swift */; };
 		3D1A8D1526285CD400691570 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1A8D1426285CD400691570 /* SceneDelegate.swift */; };
 		3D1A8D1A26285CD400691570 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D1A8D1826285CD400691570 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D116641264A824F0019FAA0 /* UpComingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpComingViewController.swift; sourceTree = "<group>"; };
 		3D1A8D0F26285CD400691570 /* MyNetflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNetflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1A8D1226285CD400691570 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D1A8D1426285CD400691570 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				3DD3CFA8263A857A00C8C639 /* Player.storyboard */,
 				3DD3CFAA263A85A000C8C639 /* PlayerViewController.swift */,
 				3DD3CFAC263BA6AA00C8C639 /* PlayerView.swift */,
+				3D116641264A824F0019FAA0 /* UpComingViewController.swift */,
 			);
 			path = MyNetflix;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				3D1A8D2B26286F7B00691570 /* HomeViewController.swift in Sources */,
 				3D1A8D2826286A2600691570 /* AppTabbarController.swift in Sources */,
 				3DD3CFAD263BA6AA00C8C639 /* PlayerView.swift in Sources */,
+				3D116642264A824F0019FAA0 /* UpComingViewController.swift in Sources */,
 				3DD3CFAB263A85A000C8C639 /* PlayerViewController.swift in Sources */,
 				3D1A8D362628A26D00691570 /* RecommandListViewController.swift in Sources */,
 				3D1A8D1326285CD400691570 /* AppDelegate.swift in Sources */,

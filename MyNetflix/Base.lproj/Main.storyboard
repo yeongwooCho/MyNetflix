@@ -12,7 +12,7 @@
         <!--공계예정-->
         <scene sceneID="m23-Vc-k8d">
             <objects>
-                <viewController id="pQi-mp-EqH" sceneMemberID="viewController">
+                <viewController id="pQi-mp-EqH" customClass="UpComingViewController" customModule="MyNetflix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KvP-4T-fYb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +39,7 @@
                                                             <constraint firstAttribute="height" constant="200" id="VvC-Bu-R7W"/>
                                                         </constraints>
                                                         <connections>
-                                                            <segue destination="vf7-lo-fxl" kind="embed" id="ojz-Vu-Wbu"/>
+                                                            <segue destination="vf7-lo-fxl" kind="embed" identifier="first" id="ojz-Vu-Wbu"/>
                                                         </connections>
                                                     </containerView>
                                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Kj-S2-EdI">
@@ -48,7 +48,7 @@
                                                             <constraint firstAttribute="height" constant="200" id="Yn8-9K-cER"/>
                                                         </constraints>
                                                         <connections>
-                                                            <segue destination="seM-y7-00i" kind="embed" id="RBO-CQ-VpQ"/>
+                                                            <segue destination="seM-y7-00i" kind="embed" identifier="second" id="RBO-CQ-VpQ"/>
                                                         </connections>
                                                     </containerView>
                                                 </subviews>
@@ -636,6 +636,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="SKs-af-bdu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="tgX-bR-jQR" secondAttribute="trailing" id="BVd-oy-cT7"/>
