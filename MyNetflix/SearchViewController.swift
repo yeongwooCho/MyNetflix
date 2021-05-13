@@ -8,9 +8,13 @@
 import UIKit
 import Kingfisher
 import AVFoundation
+import Firebase
 
 class SearchViewController: UIViewController {
 
+    
+    let db = Database.database(url: "https://mynetflix-6ae7e-default-rtdb.firebaseio.com/").reference().child("searchHistory")
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var resultCollectionView: UICollectionView!
     
@@ -93,6 +97,9 @@ extension SearchViewController: UISearchBarDelegate {
             DispatchQueue.main.async {
                 self.movies = movies
                 self.resultCollectionView.reloadData()
+                
+                let timeStamp: Double = Date().timeIntervalSince1970.rounded()
+                self.db.childByAutoId().setValue(["term": searchTerm, "timeStamp": timeStamp])
             }
         }
 //        print("---> 검색결과: \(searchTerm)")
