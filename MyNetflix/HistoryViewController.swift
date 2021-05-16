@@ -18,6 +18,31 @@ class HistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        db.observeSingleEvent(of: .value) { snapshot in
+            guard let searchHistory = snapshot.value as? [String: Any] else { return }
+            
+//            let data = try! JSONSerialization.data(withJSONObject: Array(searchHistory.values), options: [])
+//            let decoder = JSONDecoder()
+//            let searchTerms = try! decoder.decode([SearchTerm].self, from: data)
+//            print("data: \(data)")
+//            print("searchTerm: \(searchTerms)")
+            
+            do {
+                let data = try JSONSerialization.data(withJSONObject: Array(searchHistory.values), options: [])
+                let decoder = JSONDecoder()
+                let searchTerms = try decoder.decode([SearchTerm].self, from: data)
+                self.searchTerms = searchTerms.sorted(by: { term1, term2 in
+                    return term1.timeStamp > term2.timeStamp
+                })
+                self.tableView.reloadData()
+            } catch let error {
+                print("error: \(error.localizedDescription)")
+            }
+        }
+    }
 }
 
 extension HistoryViewController: UITableViewDataSource {
